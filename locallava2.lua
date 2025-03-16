@@ -1,19 +1,8 @@
--- ローカル側スクリプト
-
-local lavaParts = Workspace.Map.CircleIsland.Detail.LavaParts -- LavaPartsの親
-
--- Lavaパーツを削除する関数
-local function destroyLava()
-    while true do
-        -- Lavaパーツを取得して削除
-        for _, lavaPart in pairs(lavaParts:GetChildren()) do
-            if lavaPart.Name == "Lava" then
-                lavaPart:Destroy()
-            end
+while true do
+    for _, part in pairs(game.Workspace:GetDescendants()) do
+        if part:IsA("BasePart") and part.Name == "Lava" then
+            part:Destroy()
         end
-        wait(0.01) -- 0.01秒ごとに削除
     end
+    wait(0.1) -- 0.1秒ごとにチェック
 end
-
--- Lava削除を開始
-destroyLava()
