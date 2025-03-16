@@ -4,5 +4,5 @@ while true do
             part:Destroy()
         end
     end
-    wait(0.1) -- 0.1秒ごとにチェック
+    wait(1) -- 0.1秒ごとにチェック
 end
